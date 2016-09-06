@@ -1,0 +1,20 @@
+<div class="ui main container">
+    <div class="ui two column doubling stackable grid container">
+        <div class="ui segments column">
+            <div *ngIf="user['Courses']">
+                <p align="center">Courses</p>
+                <p *ngFor="let key of user['Courses'] | keys" class="ui segment" (click)="gotoCourse()">
+                    {{key}}
+                </p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="ui segments">
+                <p class="ui segment">Roll no: {{user._id}}</p>
+                <p class="ui segment">Department: {{user.Department | uppercase}}</p>
+                <p class="ui segment">Section: {{user.Section}}</p>
+                <p class="ui segment">Current Year: II/IV</p>
+            </div>
+        </div>
+    </div>
+</div>

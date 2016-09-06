@@ -1,0 +1,13 @@
+<div *ngIf="this.authService.isLoggedIn();">
+    <div class="ui large top fixed inverted menu">
+        <div class="ui container">
+            <a class=" header item" routerLink="/">
+                Upbeat
+            </a>
+            <div class="right item">
+                <a class="ui secondary button" routerLink="/profile" routerLinkActive="active">Profile</a>
+                <button class="ui negative button" (click)="logout();">Logout</button>
+            </div>
+        </div>
+    </div>
+</div>

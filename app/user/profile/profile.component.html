@@ -1,0 +1,10 @@
+<p align="center">Personal Details</p>
+<p *ngFor="let key of user['Personal Details'] | keys" class="ui segment" (click)="gotoCourse()">
+    {{key}}:{{user['Personal Details'][key]}}
+</p>
+<div *ngFor="let key of user['Attendance_Dates'] | keys">
+    {{key}}
+<p *ngFor="let days of key | keys">
+    {{days}}
+</p>
+</div>
