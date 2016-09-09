@@ -12,15 +12,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var posts_service_1 = require("./posts.service");
 var PostsComponent = (function () {
-    function PostsComponent() {
+    function PostsComponent(postsService) {
+        this.postsService = postsService;
     }
+    PostsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.postsService.getPosts()
+            .subscribe(function (result) {
+            _this.posts = result;
+            console.log(_this.posts);
+        });
+    };
     PostsComponent = __decorate([
         core_1.Component({
             selector: 'posts',
             templateUrl: 'app/user/posts/posts.component.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [posts_service_1.PostsService])
     ], PostsComponent);
     return PostsComponent;
 }());

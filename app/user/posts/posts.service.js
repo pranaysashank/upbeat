@@ -12,12 +12,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+require('../../rxjs-extensions');
 var PostsService = (function () {
-    function PostsService() {
+    function PostsService(http) {
+        this.http = http;
     }
+    PostsService.prototype.getPosts = function () {
+        var authToken = localStorage.getItem('auth_token');
+        return this.http
+            .get("http://127.0.0.1:4567/posts.php?auth_token=" + authToken)
+            .map(function (res) { return res.json(); });
+    };
     PostsService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_1.Http])
     ], PostsService);
     return PostsService;
 }());

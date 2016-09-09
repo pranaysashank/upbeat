@@ -1,15 +1,16 @@
-<div class="ui centered card">
+<div class="ui centered card" *ngFor="let post of posts">
     <div class="content">
         <div class="right floated meta"></div>
-        <img class="ui avatar image"> Pranay Sashank
+        <img class="ui avatar image"> {{post.author}}
     </div>
     <div class="content">
-        I was wondering how the placements in our college are? I got serious doubts after listening to adsdsj dskjgdlkj.
-        Is this college any good. The only thing I like in our college is parking.
+        <!--I was wondering how the placements in our college are? I got serious doubts after listening to adsdsj dskjgdlkj.
+        Is this college any good. The only thing I like in our college is parking.-->
+        {{post.body}}
     </div>
     <div class="content">
-        36<i class="thumbs up icon"></i>
-        8<i class="thumbs down icon"></i>
+        {{post.upvotes}}<i class="thumbs up icon"></i>
+        {{post.downvotes}}<i class="thumbs down icon"></i>
     </div>
     <div class="extra content">
         <div class="ui large transparent left icon input">
