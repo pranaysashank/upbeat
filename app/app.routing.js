@@ -5,6 +5,7 @@ var login_component_1 = require("./login/login.component");
 var logged_in_guard_1 = require("./login/logged-in.guard");
 var logged_out_guard_1 = require("./login/logged-out.guard");
 var profile_component_1 = require("./user/profile/profile.component");
+var courses_component_1 = require("./user/courses/courses.component");
 /**
  * Created by Pranay Sashank on 9/4/2016.
  */
@@ -23,6 +24,11 @@ var appRoutes = [
     {
         path: 'profile',
         component: profile_component_1.ProfileComponent,
+        canActivate: [logged_in_guard_1.LoggedInGuard]
+    },
+    {
+        path: 'courses',
+        component: courses_component_1.CoursesComponent,
         canActivate: [logged_in_guard_1.LoggedInGuard]
     }
 ];

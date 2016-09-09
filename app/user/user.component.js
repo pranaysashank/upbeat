@@ -33,7 +33,8 @@ var UserComponent = (function () {
     UserComponent = __decorate([
         core_1.Component({
             selector: 'user',
-            templateUrl: 'app/user/user.component.html',
+            template: "\n    <div class=\"ui main container\"><posts></posts></div>",
+            // templateUrl: 'app/user/user.component.html',
             styleUrls: ['app/user/user.component.css']
         }), 
         __metadata('design:paramtypes', [user_service_1.UserService, auth_service_1.AuthService])

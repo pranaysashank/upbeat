@@ -4,7 +4,9 @@ import {AuthService} from "../login/auth.service";
 
 @Component({
     selector: 'user',
-    templateUrl: 'app/user/user.component.html',
+    template: `
+    <div class="ui main container"><posts></posts></div>`,
+    // templateUrl: 'app/user/user.component.html',
     styleUrls: ['app/user/user.component.css']
 })
 export class UserComponent implements OnInit {

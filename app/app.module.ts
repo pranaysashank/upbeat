@@ -14,11 +14,14 @@ import {AuthService} from "./login/auth.service";
 import {LoggedOutGuard} from "./login/logged-out.guard";
 import {MenuComponent} from "./menu/menu.component";
 import {ProfileComponent} from "./user/profile/profile.component";
+import {CoursesComponent} from "./user/courses/courses.component";
+import {PostsComponent} from "./user/posts/posts.component";
+import {PostsService} from "./user/posts/posts.service";
 
 @NgModule({
     imports: [BrowserModule, FormsModule, routing, HttpModule],
-    declarations: [AppComponent, UserComponent, LoginComponent, MenuComponent, ProfileComponent, KeysPipe],
-    providers: [UserService, LoggedInGuard, AuthService, LoggedOutGuard],
+    declarations: [AppComponent, UserComponent, LoginComponent, MenuComponent, ProfileComponent, CoursesComponent, PostsComponent, KeysPipe],
+    providers: [UserService, PostsService, LoggedInGuard, AuthService, LoggedOutGuard],
     bootstrap: [ AppComponent ]
 })
 export class AppModule {

@@ -2,9 +2,25 @@
 <p *ngFor="let key of user['Personal Details'] | keys" class="ui segment" (click)="gotoCourse()">
     {{key}}:{{user['Personal Details'][key]}}
 </p>
-<div *ngFor="let key of user['Attendance_Dates'] | keys">
-    {{key}}
-<p *ngFor="let days of key | keys">
-    {{days}}
-</p>
-</div>
+<table>
+    <thead>
+    <tr>
+        <th>Attendance Date</th>
+        <th>P1 (9:40 - 10:30)</th>
+        <th>P2 (10:30 - 11:20)</th>
+        <th>P3 (11:20 - 12:10)</th>
+        <th>P4 (12:10 - 1:00)</th>
+        <th>P5 (1:40 - 2:30)</th>
+        <th>P6 (2:30 - 3:20)</th>
+        <th>P7 (3:20 - 4:10)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let key of user['Attendance_Dates'] | keys">
+        <td>{{key}}</td>
+        <td *ngFor="let days of user['Attendance_Dates'][key] | keys">
+            {{days}}
+        </td>
+    </tr>
+    </tbody>
+</table>

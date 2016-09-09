@@ -23,14 +23,17 @@ var auth_service_1 = require("./login/auth.service");
 var logged_out_guard_1 = require("./login/logged-out.guard");
 var menu_component_1 = require("./menu/menu.component");
 var profile_component_1 = require("./user/profile/profile.component");
+var courses_component_1 = require("./user/courses/courses.component");
+var posts_component_1 = require("./user/posts/posts.component");
+var posts_service_1 = require("./user/posts/posts.service");
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_1.routing, http_1.HttpModule],
-            declarations: [app_component_1.AppComponent, user_component_1.UserComponent, login_component_1.LoginComponent, menu_component_1.MenuComponent, profile_component_1.ProfileComponent, keys_pipe_1.KeysPipe],
-            providers: [user_service_1.UserService, logged_in_guard_1.LoggedInGuard, auth_service_1.AuthService, logged_out_guard_1.LoggedOutGuard],
+            declarations: [app_component_1.AppComponent, user_component_1.UserComponent, login_component_1.LoginComponent, menu_component_1.MenuComponent, profile_component_1.ProfileComponent, courses_component_1.CoursesComponent, posts_component_1.PostsComponent, keys_pipe_1.KeysPipe],
+            providers: [user_service_1.UserService, posts_service_1.PostsService, logged_in_guard_1.LoggedInGuard, auth_service_1.AuthService, logged_out_guard_1.LoggedOutGuard],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
