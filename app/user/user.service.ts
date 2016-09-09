@@ -144,7 +144,7 @@ export class UserService {
      let authToken = localStorage.getItem('auth_token');
 
      this.observable = this.http
-     .get(`http://127.0.0.1:4568/user.php?auth_token=${authToken}`)
+     .get(`http://127.0.0.1:4567/user.php?auth_token=${authToken}`)
      .map((res) => {
      this.observable = null;
      this.user = res.json();
@@ -154,7 +154,7 @@ export class UserService {
      }*/
         let authToken = localStorage.getItem('auth_token');
         return this.http
-            .get(`http://127.0.0.1:4568/user.php?auth_token=${authToken}`)
+            .get(`http://127.0.0.1:4567/user.php?auth_token=${authToken}`)
             .map((res) => res.json());
     }
 

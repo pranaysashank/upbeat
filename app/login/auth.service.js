@@ -27,7 +27,7 @@ var AuthService = (function () {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
         return this.http
-            .post('http://127.0.0.1:4568/login.php', JSON.stringify({ id: id, password: password }), { headers: headers })
+            .post('http://127.0.0.1:4567/login.php', JSON.stringify({ id: id, password: password }), { headers: headers })
             .map(function (res) { return res.json(); })
             .map(function (res) {
             _this.error = res.error;

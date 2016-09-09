@@ -4,7 +4,7 @@
 </p>
 <div *ngFor="let key of user['Attendance_Dates'] | keys">
     {{key}}
-<p *ngFor="let days of key | keys">
+<p *ngFor="let days of user['Attendance_Dates'][key] | keys">
     {{days}}
 </p>
 </div>
